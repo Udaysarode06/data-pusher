@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "2feb49ca-d752-4b27-ae68-b117945063f5",
+		"name": "Data Pusher API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13434455"
+	},
+	"item": [
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "Create Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"example123454@example.com\",\n  \"account_name\": \"Example Account\",\n  \"website\": \"https://www.google.com\",\n  \"account_id\": \"12345678abc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/accounts/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"accounts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/accounts/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"accounts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/accounts/12345678abc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"accounts",
+								"12345678abc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Account",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"example12@example.com\",\n  \"account_name\": \"Updated Account1 \",\n  \"website\": \"https://www.updatedexample.com\",\n  \"account_id\":\"12345678abc\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/accounts/12345678abc/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"accounts",
+								"12345678abc",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Account",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/accounts/12345678abc/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"accounts",
+								"12345678abc",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Destinations",
+			"item": [
+				{
+					"name": "Create Destination",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account\": \"12345678abc\",\n    \"url\": \"https://google.com/\",\n    \"http_method\": \"POST\",\n    \"headers\": {\n    \"APP_ID\": \"12345678abc\",\n    \"APP_SECTET\": \"e7tcC1rQD8-vqmLTQX95ARTObLWtS6wXrM9UZmPxT6o\",\n    \"ACTION\": \"account.update\",\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"*\"\n}\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/destinations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"destinations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Destinations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/destinations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"destinations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Destinations for Account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/accounts/12345678abc/destinations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"accounts",
+								"12345678abc",
+								"destinations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a particular Destination",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"url\": \"https://google.com/\",\n  \"http_method\": \"PUT\",\n  \"headers\": {\n  \"APP_ID\": \"1234APPID1234\",\n  \"APP_SECRET\": \"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s\",\n  \"ACTION\": \"user.update\",\n  \"Content-Type\": \"application/json\",\n  \"Accept\": \"*\"\n}\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/destinations/15/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"destinations",
+								"15",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a particular Destination",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/destinations/16/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"destinations",
+								"16",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Incoming Data",
+			"item": [
+				{
+					"name": "Receive Incoming Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "CL-X-TOKEN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"0": "<",
+								"1": "a",
+								"2": "p",
+								"3": "p",
+								"4": "_",
+								"5": "s",
+								"6": "e",
+								"7": "c",
+								"8": "r",
+								"9": "e",
+								"10": "t",
+								"11": "_",
+								"12": "t",
+								"13": "o",
+								"14": "k",
+								"15": "e",
+								"16": "n",
+								"17": ">",
+								"key": "",
+								"disabled": true
+							},
+							{
+								"key": "CL-X-TOKEN",
+								"value": "yYgot9WVh30ndFc4EUqJSuyfxfcPnDSUTl3ox4isPrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/server/incoming_data/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"server",
+								"incoming_data",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
